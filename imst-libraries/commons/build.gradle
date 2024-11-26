@@ -25,20 +25,16 @@ tasks.named('jar') {
 apply plugin: 'maven-publish'
 
 dependencies {
-    implementation 'jakarta.persistence:jakarta.persistence-api:3.2.0'
-    implementation 'org.springframework.data:spring-data-mongodb:4.3.5'
-    compileOnly 'org.projectlombok:lombok:1.18.34'
-    annotationProcessor 'org.projectlombok:lombok:1.18.34'
-    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.imaginary-store'
-            artifactId = 'schema'
-            version = "1.0.0"
+            groupId = 'com.imaginary-store' as Publication
+            artifactId = 'commons' as Publication
+            version = "1.0.0" as Publication
             from components.java
         }
     }

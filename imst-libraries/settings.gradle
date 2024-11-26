@@ -1,2 +1,4 @@
 rootProject.name = 'imst-libraries'
 include('schema')
+include('commons')
+
